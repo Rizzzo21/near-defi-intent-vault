@@ -1,0 +1,15 @@
+{
+  "name": "@near-contest/unstoppable-intents-vault",
+  "version": "1.0.0",
+  "description": "INTENT-VAULT - non-custodial cross-chain NEAR Intents solver swap and ERC-4626-style agent earnings vault",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/engine.test.mjs",
+    "demo": "node scripts/demo.mjs"
+  },
+  "devDependencies": {
+    "near-api-js": "^5.1.1",
+    "near-sdk-js": "^2.0.0"
+  }
+}
