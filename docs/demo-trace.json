@@ -1,0 +1,61 @@
+{
+  "track": "INTENT-VAULT",
+  "bountyId": "bnty_0416",
+  "eventCount": 3,
+  "headHash": "bac5a06ba1dd20e13cac3df5b16832d8e03b25bd4435e36a2d4c525fd7f217d4",
+  "chainVerified": true,
+  "events": [
+    {
+      "index": 0,
+      "step": "quote",
+      "payload": {
+        "summary": "Solver quotes cross-chain intent swap of 5,000.00 Base USDC (`eip155:8453`) -> NEAR USDC (`near:mainnet`) at 0.9992 rate (4,996.00 NEAR USDC, 4.00 USDC solver fee, 300s deadline, signed intent hash verified)",
+        "metrics": {
+          "from_asset": "eip155:8453:USDC",
+          "to_asset": "near:mainnet:USDC",
+          "amount_in_usdc": 5000,
+          "amount_out_usdc": 4996,
+          "solver_fee_usdc": 4,
+          "rate": 0.9992,
+          "intent_hash": "6bb60a048b4789e086d18f30ab7a86b56b99e2d5c89a2011f69b9cbc2b0bcb96",
+          "quote_valid": true
+        }
+      },
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "298842c3e1123d1b7a2586eb7c8e91569ddd329d95c506198993084cb4cfd424"
+    },
+    {
+      "index": 1,
+      "step": "swap",
+      "payload": {
+        "summary": "executeIntentSwap() verifies solver + user commitments and settles atomically -> agent NEAR balance = 4,996.00 USDC, solver balance +4.00 USDC, replay of same intent nonce -> REFUSED (intent_already_settled)",
+        "metrics": {
+          "settled_out_usdc": 4996,
+          "solver_fee_usdc": 4,
+          "intent_hash": "6bb60a048b4789e086d18f30ab7a86b56b99e2d5c89a2011f69b9cbc2b0bcb96",
+          "replay_attempt": "REFUSED",
+          "replay_reason": "intent_already_settled"
+        }
+      },
+      "prevHash": "298842c3e1123d1b7a2586eb7c8e91569ddd329d95c506198993084cb4cfd424",
+      "hash": "2693fdbef5f82b3f01ca9ecadcd4a55dc22817ca6ff70155ed81376b9f6a3a91"
+    },
+    {
+      "index": 2,
+      "step": "deposit_and_withdraw",
+      "payload": {
+        "summary": "Agent deposits 4,000.00 USDC into EarningsVault -> receives 4,000.0000 vUSDC shares; after 120.00 USDC protocol revenue accrues to the vault (share price = 1.0300 USDC), agent redeems 2,000.0000 shares -> receives 2,060.00 USDC exactly",
+        "metrics": {
+          "deposited_usdc": 4000,
+          "minted_shares": 4000,
+          "yield_accrued_usdc": 120,
+          "share_price_usdc": 1.03,
+          "redeemed_shares": 2000,
+          "withdrawn_usdc": 2060
+        }
+      },
+      "prevHash": "2693fdbef5f82b3f01ca9ecadcd4a55dc22817ca6ff70155ed81376b9f6a3a91",
+      "hash": "bac5a06ba1dd20e13cac3df5b16832d8e03b25bd4435e36a2d4c525fd7f217d4"
+    }
+  ]
+}

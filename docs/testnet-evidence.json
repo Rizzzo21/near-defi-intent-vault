@@ -1,0 +1,74 @@
+{
+  "network": "testnet",
+  "contract_account": "ivault-backstop-1109.testnet",
+  "contract_explorer": "https://explorer.testnet.near.org/accounts/ivault-backstop-1109.testnet",
+  "contract_wasm_sha256": "bbafc35fd0d8c4b1f598a2bd62997044274c09ebf7a9a12606ae69fb85d56960",
+  "deployed_at_utc": "2026-11-09T23:05:30.102Z",
+  "intent": {
+    "from_asset": "eip155:8453:USDC",
+    "to_asset": "near:mainnet:USDC",
+    "amount_in_micro": "5000000000",
+    "amount_out_micro": "4996000000",
+    "solver": "stub-solver",
+    "nonce": "intent-vault-demo-001",
+    "deadline_seconds": 300
+  },
+  "intent_hash": "6bb60a048b4789e086d18f30ab7a86b56b99e2d5c89a2011f69b9cbc2b0bcb96",
+  "flow": {
+    "quote": {
+      "amount_in_micro": "5000000000",
+      "fee_micro": "4000000",
+      "amount_out_micro": "4996000000",
+      "fee_bps": 8,
+      "rate_bps": 9992,
+      "tx": null,
+      "note": "view call (no tx); numbers computed on-chain"
+    },
+    "swap": {
+      "tx": "7RVtEJeNMC8iEqkqQUgigzUEkWt2DGL11FfQ9U1xaV2t",
+      "explorer": "https://explorer.testnet.near.org/transactions/7RVtEJeNMC8iEqkqQUgigzUEkWt2DGL11FfQ9U1xaV2t"
+    },
+    "replay_refused": {
+      "tx": "3AFy9LvF7t7L3n96njpX4VnHdRPUk6C9hGbXFmznhUQ3",
+      "explorer": "https://explorer.testnet.near.org/transactions/3AFy9LvF7t7L3n96njpX4VnHdRPUk6C9hGbXFmznhUQ3",
+      "error": "{\"index\":0,\"kind\":{\"index\":0,\"kind\":{\"FunctionCallError\":{\"ExecutionError\":\"Smart contract panicked: intent_already_settled\\n    at execute_intent (build/contract.js:2599)\\n    at apply (native)\\n    at <anonymous> (build/contract.js:2462)\\n    at execute_intent (build/contract.js:2747)\\n\"}}}}",
+      "replayed_by": "ivault-replay-1109.testnet",
+      "receipt": "HwpfjFRpFhfKB74Jm8zVZCwWKncbBTfyWZm6pAr2PPu3 (first replay, same intent hash)"
+    },
+    "deposit": {
+      "tx": "7qPgqeYaxr3yYdrTcEES6GP2aodX7i2U81uprazTGy64",
+      "explorer": "https://explorer.testnet.near.org/transactions/7qPgqeYaxr3yYdrTcEES6GP2aodX7i2U81uprazTGy64",
+      "amount_usdc": "4000.00"
+    },
+    "accrue_yield": {
+      "tx": "EJsW8jiCRoXmdA3PPxXvXiJNEVtPjqCT1dnLg2SfrSBn",
+      "explorer": "https://explorer.testnet.near.org/transactions/EJsW8jiCRoXmdA3PPxXvXiJNEVtPjqCT1dnLg2SfrSBn",
+      "amount_usdc": "120.00"
+    },
+    "withdraw": {
+      "tx": "9KWMoqoBsboQNEnvzSeQA3yKbcd3zmvqGuiJgeB6Fod4",
+      "explorer": "https://explorer.testnet.near.org/transactions/9KWMoqoBsboQNEnvzSeQA3yKbcd3zmvqGuiJgeB6Fod4",
+      "shares": "2000.0000",
+      "assets_out_usdc": "2060.00"
+    },
+    "deploy": {
+      "tx": "CDcHeCo4or7kPUXKKvkiVs3ZxQ8khpC9YAddn2LrnsDm",
+      "explorer": "https://explorer.testnet.near.org/transactions/CDcHeCo4or7kPUXKKvkiVs3ZxQ8khpC9YAddn2LrnsDm"
+    }
+  },
+  "final_state": {
+    "total_assets_micro": "2060000000",
+    "total_shares_micro": "2000000000",
+    "share_price_micro": "1030000",
+    "agent_balance_micro": "3056000000",
+    "solver_fees_micro": "4000000",
+    "settled_intent_count": 1
+  },
+  "verified_figures": {
+    "quote_out_usdc": "4996.00",
+    "solver_fee_usdc": "4.00",
+    "share_price_usdc": "1.0300",
+    "withdrawn_usdc": "2060.00"
+  },
+  "disclosure": "Stub solver: execute_intent() verifies quote math on-chain and records the intent hash; it does not call intents.near execute_intents. Yield accrual is a demo step (amount supplied by the caller); on mainnet it would be real revenue routed in by the solver."
+}
